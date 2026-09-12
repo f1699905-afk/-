@@ -1,0 +1,21 @@
+workflows:
+  android-workflow:
+    name: Android Build
+    max_build_duration: 60
+    instance_type: mac_mini_m1
+    environment:
+      flutter: stable
+    scripts:
+      - name: Create Flutter project structure
+        script: |
+          if [ ! -d "android" ]; then
+            flutter create --project-name blood_donation_app --org com.blooddonation --platforms android .
+          fi
+      - name: Get Flutter packages
+        script: |
+          flutter pub get
+      - name: Build APK
+        script: |
+          flutter build apk --release
+    artifacts:
+      - build/app/outputs/flutter-apk/*.apk
