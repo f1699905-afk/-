@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 void main() {
@@ -23,13 +22,6 @@ class BloodDonationApp extends StatelessWidget {
         primaryColor: AppColors.primary,
         scaffoldBackgroundColor: AppColors.bg,
       ),
-      locale: Locale('ar'),
-      supportedLocales: [Locale('ar'), Locale('fr'), Locale('en')],
-      localizationsDelegates: [
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
       home: SplashScreen(),
     );
   }
